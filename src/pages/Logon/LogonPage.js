@@ -5,6 +5,9 @@ import ImageBackground from "../../components/ImagesAndIcons/ImageBackground";
 import { Container } from "./styles";
 
 const LogonPage = () => {
+    React.useEffect(() => {
+        document.title = "Compass - Login";
+      });
 
     return(
         <Container>

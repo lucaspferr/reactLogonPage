@@ -5,6 +5,10 @@ import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import HomeHeader from "../../components/HomeHeader/HomeHeader";
 
 const HomePage = () => {
+
+  React.useEffect(() => {
+    document.title = "Compass - Home";
+  });
   return (
     <React.Fragment>
       <CounterStorage>
