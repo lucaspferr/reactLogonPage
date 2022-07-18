@@ -6,7 +6,7 @@ import { BackgroundImage, BackgroundImageContainer } from './styles';
 const ImageBackground = () => {
   return (
     <BackgroundImageContainer>
-        <BackgroundImage src={img}/>
+        <BackgroundImage src={img} label='imgbg'/>
     </BackgroundImageContainer>
   );
 }

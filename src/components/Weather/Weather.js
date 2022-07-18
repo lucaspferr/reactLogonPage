@@ -12,10 +12,10 @@ export const Weather = () => {
 
 
     const getWeather = async () => {
-      const response = await fetch(`http://api.weatherapi.com/v1/ip.json?key=a774d7449b4247d4bb4225243220807&q=auto:ip`);
+      const response = await fetch(`http://api.weatherapi.com/v1/ip.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=auto:ip`);
       const jsonBody = await response.json();
       setLocation(jsonBody.city);
-      const response2 = await fetch(`http://api.weatherapi.com/v1/current.json?key=a774d7449b4247d4bb4225243220807&q=${jsonBody.city}`);
+      const response2 = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${jsonBody.city}`);
       const jsonBody2 = await response2.json();
       setWeather(jsonBody2);
       const region = brStates.find(state =>  state[0] === jsonBody2.location.region);
