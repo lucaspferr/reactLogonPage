@@ -1,7 +1,8 @@
 import React from "react";
 import { ClockContainer, ClockDate, ClockTime } from "./styles";
+import PropTypes from "prop-types";
 
-export const Clock = () => {
+export const Clock = ({color, ...props}) => {
   const [clock, setClock] = React.useState({
     hours: "",
     minutes: "",
@@ -51,13 +52,21 @@ export const Clock = () => {
   }, []);
 
   return (
-    <ClockContainer>
-      <ClockTime>
+    <ClockContainer style={color && {color}}>
+      <ClockTime >
         {clock.hours ? clock.hours + ":" + clock.minutes : "00:00"}
       </ClockTime>
       <ClockDate>{clock.date ? clock.date : "Loading..."}</ClockDate>
     </ClockContainer>
   );
 };
+
+Clock.propTypes = {
+  color: PropTypes.string,
+}
+
+Clock.defaultProps = {
+  color: "#222222",
+}
 
 export default Clock;
