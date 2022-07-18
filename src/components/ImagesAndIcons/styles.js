@@ -33,11 +33,10 @@ export const HomeImage = styled.img`
     height: auto; 
     margin-top: 7.5vh;
     background: transparent;
-    object-fit: fill;
     @media (max-width: 768px) {
         width: 70vw;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 450px) {
         width: 95vw;
     }
     
